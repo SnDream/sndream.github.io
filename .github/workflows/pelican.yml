@@ -31,9 +31,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Pelican
-        uses: SnDream/pelican-build-pages@v1
+        uses: SnDream/pelican-build-pages@v2
         with:
-          source: ./
+          source: content
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
