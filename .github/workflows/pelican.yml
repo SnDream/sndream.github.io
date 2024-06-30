@@ -9,12 +9,12 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - uses: nelsonjchen/gh-pages-pelican-action@0.2.0
+      with: 
+        submodules: 'true'
+    - uses: rehanhaider/pelican-to-github-pages@v1.0.3
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
+        GH_PAGES_CNAME: ${{secrets.DOMAIN_CNAME}}
