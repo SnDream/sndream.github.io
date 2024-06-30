@@ -17,16 +17,14 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
-    ("Pelican", "https://getpelican.com/"),
-    ("Python.org", "https://www.python.org/"),
-    ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("You can modify those links in your config file", "#"),
+    ("网盘", "http://sndream.ysepan.com/"),
+    ("PanDocs中文版", "https://sndream.github.io/PanDocs/"),
 )
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
+    ("Weibo", "https://weibo.com/xingyzh"),
+    ("GitHub", "https://github.com/SnDream"),
 )
 
 DEFAULT_PAGINATION = 10
