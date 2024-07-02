@@ -1,5 +1,4 @@
 Title: Pelican的相关元数据
-Date: 2024-07-01 00:00:00
 Tags: Pelican
 Slug: pelican-meta
 Summary: Pelican的相关元数据集合
