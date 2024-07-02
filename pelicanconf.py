@@ -27,11 +27,37 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("Weibo", "https://weibo.com/xingyzh"),
-    ("GitHub", "https://github.com/SnDream"),
+    ("weibo", "https://weibo.com/xingyzh"),
+)
+
+MENUITEMS = (
+    ("Archives", "/archives.html"),
+    ("Categories", "/categories.html"),
+    ("Tags", "/tags.html"),
 )
 
 DEFAULT_PAGINATION = 10
 
+STATIC_PATHS = ["images"]
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
+
+# Theme
+THEME = "themes/Flex"
+
+# Flex Theme Configs
+
+MAIN_MENU = True
+
+from datetime import datetime
+COPYRIGHT_YEAR = datetime.now().year
+COPYRIGHT_NAME = "SnDream"
+
+THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
+THEME_COLOR_ENABLE_USER_OVERRIDE = True
+
+GITHUB_CORNER_URL = "https://github.com/SnDream"
+
+SITELOGO = '/images/sitelogo.png'
+FAVICON = '/images/favicon.ico'

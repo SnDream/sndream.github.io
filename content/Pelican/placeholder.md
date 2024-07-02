@@ -3,12 +3,12 @@ Date: 2024-07-01 00:00:00
 Tags: Pelican
 Slug: pelican-meta
 Summary: Pelican的相关元数据集合
+Status: hidden
 
 # 常用
 
 ```
 Title: 标题
-Date: 
 Tags: GameBoy, 汉化
 Slug: title-short
 Summary: 概括
