@@ -8,6 +8,10 @@ TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'zh_CN'
 
+# Plugins
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["filetime_from_git"]
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
