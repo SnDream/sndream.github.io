@@ -61,3 +61,7 @@ GITHUB_CORNER_URL = "https://github.com/SnDream"
 
 SITELOGO = '/images/sitelogo.png'
 FAVICON = '/images/favicon.ico'
+
+# FILETIME_FROM_GIT
+GIT_WARN_NOT_COMMITED = True
+GIT_WARN_NOT_MANAGED = True

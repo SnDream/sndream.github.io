@@ -49,9 +49,13 @@ def filetime_from_git(content, git_content):
                 content.modified = git_content.get_newest_commit_date()
         else:
             # File isn't committed
+            if content.settings['GIT_WARN_NOT_COMMITED']:
+                logger.warn(path + " is not committed")
             content.date = fs_creation_time
     else:
         # file is not managed by git
+        if content.settings['GIT_WARN_NOT_MANAGED']:
+            logger.warn(path + " is not managed by git")
         content.date = fs_creation_time
 
     # Clean up content attributes
