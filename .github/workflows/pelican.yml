@@ -29,7 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2147483647
           submodules: true
       - name: Setup Pages
         uses: actions/configure-pages@v5
