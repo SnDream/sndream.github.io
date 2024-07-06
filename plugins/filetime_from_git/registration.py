@@ -22,6 +22,7 @@ def setup_option_defaults(pelican_inst):
     pelican_inst.settings.setdefault('GIT_GENERATE_PERMALINK', False)
     pelican_inst.settings.setdefault('GIT_WARN_NOT_MANAGED', False)
     pelican_inst.settings.setdefault('GIT_WARN_NOT_COMMITED', False)
+    pelican_inst.settings.setdefault('GIT_WARN_MODIFIED', False)
 
 
 def register():

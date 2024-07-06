@@ -44,6 +44,8 @@ def filetime_from_git(content, git_content):
             content.date = git_content.get_oldest_commit_date()
 
             if git_content.is_modified():
+                if content.settings['GIT_WARN_MODIFIED']:
+                    logger.warn(path + " is committed without commited")
                 content.modified = fs_modified_time
             else:
                 content.modified = git_content.get_newest_commit_date()
