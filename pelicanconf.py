@@ -52,7 +52,7 @@ MENUITEMS = (
 
 DEFAULT_PAGINATION = 10
 
-STATIC_PATHS = ["images"]
+STATIC_PATHS = ["images", "assets"]
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
@@ -73,8 +73,8 @@ THEME_COLOR_ENABLE_USER_OVERRIDE = True
 
 GITHUB_CORNER_URL = "https://github.com/SnDream"
 
-SITELOGO = '/images/sitelogo.png'
-FAVICON = '/images/favicon.ico'
+SITELOGO = '/assets/sitelogo.png'
+FAVICON = '/assets/favicon.ico'
 
 USE_LESS = False
 
