@@ -324,6 +324,10 @@ def interlink_translations(content):
     so the URL (including localized month names) of the different subsites
     will be honored
     '''
+
+    # A workaround for "CRITICAL KeyError: translated.md". Not fully tested
+    if content.source_path in _NATIVE_CONTENT_URL_DB:
+        return
     lang = content.lang
     # sort translations by lang
     content.translations.sort(key=attrgetter('lang'))
