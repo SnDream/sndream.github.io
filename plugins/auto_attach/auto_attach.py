@@ -6,10 +6,15 @@ from markdown.inlinepatterns import ImageInlineProcessor
 # import xml.etree.ElementTree as etree
 from pelican import signals
 import logging
+from os import path
 
 # Pattern must not consume characters
-ATTACH_IMAGE_RE = r'\!\[(?=[^\]]*?\]\(\./)'
-ATTACH_LINK_RE = r'\[(?=[^\]]*?\]\(\./)'
+# ATTACH_IMAGE_RE = r'\!\[(?=[^\]]*?\]\(\./)'
+# ATTACH_LINK_RE = r'\[(?=[^\]]*?\]\(\./)'
+
+# Support path like '../path/to/file'
+ATTACH_IMAGE_RE = r'\!\[(?=[^\]]*?\]\(\.\.?/)'
+ATTACH_LINK_RE = r'\[(?=[^\]]*?\]\(\.\.?/)'
 
 class AttachImageInlineProcessor(ImageInlineProcessor):
     def handleMatch(self, m, data):
@@ -32,7 +37,13 @@ class AttachLinkInlineProcessor(LinkInlineProcessor):
         # Postprocessing
         if el is not None and el.get("href"):
             el_oldsrc = el.get("href")
-            el.set("href", "{attach}" + el_oldsrc)
+            # If href links to Markdown/reStructuredText,
+            # use {filename} instead of {attach}
+            root, ext = path.splitext(el_oldsrc)
+            if ext.lower() in (".md", ".rst"):
+                el.set("href", "{filename}" + el_oldsrc)
+            else:
+                el.set("href", "{attach}" + el_oldsrc)
             logging.debug(f"Coercing href '{el_oldsrc}' to '{el.get('href')}'")
 
         return el, start, index
