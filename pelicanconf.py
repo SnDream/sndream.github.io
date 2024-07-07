@@ -23,7 +23,12 @@ ARTICLE_LANG_SAVE_AS = '{category}/{slug}-{lang}.html'
 
 # Plugins
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["filetime_from_git", "i18n_subsites", "auto_attach"]
+PLUGINS = [
+    "filetime_from_git",
+    "i18n_subsites",
+    "auto_attach",
+    "pelican_md_checklist",
+]
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
 # Feed generation is usually not desired when developing
