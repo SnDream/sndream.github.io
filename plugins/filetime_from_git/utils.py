@@ -35,5 +35,5 @@ def datetime_from_timestamp(timestamp, content):
     that now also have timezone information.
     """
     return set_date_tzinfo(
-        datetime.fromtimestamp(timestamp),
+        datetime.fromtimestamp(timestamp) if timestamp else datetime.now(),
         tz_name=content.settings.get('TIMEZONE', None))

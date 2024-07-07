@@ -27,9 +27,16 @@ def filetime_from_git(content, git_content):
         # Disable for this content
         return
 
+    file_exist = True
     path = content.source_path
-    fs_creation_time = datetime_from_timestamp(os.stat(path).st_ctime, content)
-    fs_modified_time = datetime_from_timestamp(os.stat(path).st_mtime, content)
+    try:
+        fs_creation_time = datetime_from_timestamp(os.stat(path).st_ctime, content)
+        fs_modified_time = datetime_from_timestamp(os.stat(path).st_mtime, content)
+    except FileNotFoundError:
+        logger.warn(path + " is not exist")
+        file_exist = False
+        fs_creation_time = datetime_from_timestamp(None, content)
+        fs_modified_time = datetime_from_timestamp(None, content)
 
     # 1. file is not managed by git
     #    date: fs time
@@ -56,7 +63,7 @@ def filetime_from_git(content, git_content):
             content.date = fs_creation_time
     else:
         # file is not managed by git
-        if content.settings['GIT_WARN_NOT_MANAGED']:
+        if file_exist and content.settings['GIT_WARN_NOT_MANAGED']:
             logger.warn(path + " is not managed by git")
         content.date = fs_creation_time
 
