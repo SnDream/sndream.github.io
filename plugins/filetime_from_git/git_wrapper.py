@@ -13,6 +13,11 @@ from datetime import datetime
 from pelican.utils import set_date_tzinfo
 from git import Git, Repo
 
+try:
+    from zoneinfo import ZoneInfo
+except ModuleNotFoundError:
+    from backports.zoneinfo import ZoneInfo
+
 DEV_LOGGER = logging.getLogger(__name__)
 
 
@@ -147,8 +152,9 @@ class _GitWrapper(_GitWrapperCommon):
         '''
         Get datetime of commit comitted_date
         '''
+        tz_info = ZoneInfo(tz_name) if tz_name else None
         return set_date_tzinfo(
-            datetime.fromtimestamp(commit.committed_date),
+            datetime.fromtimestamp(commit.committed_date, tz=tz_info),
             tz_name=tz_name)
 
 

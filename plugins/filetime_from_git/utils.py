@@ -6,6 +6,11 @@ from datetime import datetime
 import logging
 from pelican.utils import set_date_tzinfo
 
+try:
+    from zoneinfo import ZoneInfo
+except ModuleNotFoundError:
+    from backports.zoneinfo import ZoneInfo
+
 DEV_LOGGER = logging.getLogger(__name__)
 
 
@@ -34,6 +39,8 @@ def datetime_from_timestamp(timestamp, content):
     so that datetime is comparable to other datetime objects in recent versions
     that now also have timezone information.
     """
+    tz_name=content.settings.get('TIMEZONE', None)
+    tz_info=ZoneInfo(tz_name) if tz_name else None
     return set_date_tzinfo(
-        datetime.fromtimestamp(timestamp) if timestamp else datetime.now(),
-        tz_name=content.settings.get('TIMEZONE', None))
+        datetime.fromtimestamp(timestamp, tz=tz_info) if timestamp else datetime.now(tz=tz_info),
+        tz_name=tz_name)
