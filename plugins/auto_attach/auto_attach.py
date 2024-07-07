@@ -22,6 +22,8 @@ ATTACH_CONTENT_DIR = ""
 
 def link_type(link):
     link = path.normpath(path.join(ATTACH_CONTENT_DIR, link))
+    if not path.exists(link):
+        logging.warn(link + " is not exist")
 
     # static check
     for static_path in ATTACH_STATIC_PATHS:
@@ -72,15 +74,13 @@ class AutoAttachExtension(Extension):
         md.inlinePatterns.register(AttachLinkInlineProcessor(ATTACH_LINK_RE, md), 'attach_link', 160 + 1)
 
 def pelican_init(pelican_obj):
-    global ATTACH_PATH, ATTACH_STATIC_PATHS
-    ATTACH_PATH = path.normpath(pelican_obj.settings["PATH"])
-    if "STATIC_PATHS" in pelican_obj.settings:
-        paths = pelican_obj.settings["STATIC_PATHS"]
-        ATTACH_STATIC_PATHS = [ path.normpath(path.join(ATTACH_PATH, x)) for x in paths ]
     pelican_obj.settings['MARKDOWN'].setdefault('extensions', []).append(AutoAttachExtension())
 
 def pelican_content_dir_get(content):
-    global ATTACH_CONTENT_DIR
+    global ATTACH_CONTENT_DIR, ATTACH_PATH, ATTACH_STATIC_PATHS
+    ATTACH_PATH = path.normpath(content.settings.get("PATH", ""))
+    paths = content.settings.get("STATIC_PATHS", [])
+    ATTACH_STATIC_PATHS = [ path.normpath(path.join(ATTACH_PATH, x)) for x in paths ]
     ATTACH_CONTENT_DIR = path.dirname(content.source_path)
 
 def register():
