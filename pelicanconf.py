@@ -28,6 +28,7 @@ PLUGINS = [
     "i18n_subsites",
     "auto_attach",
     "pelican_md_checklist",
+    "representative_image",
 ]
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
