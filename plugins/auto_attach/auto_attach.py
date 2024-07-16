@@ -19,6 +19,7 @@ ATTACH_LINK_RE = r'\[(?=[^\]]*?\]\(\.\.?/)'
 ATTACH_STATIC_PATHS = []
 ATTACH_PATH = ""
 ATTACH_CONTENT_DIR = ""
+ATTACH_CONTENTS = []
 
 def link_type(link):
     link = path.normpath(path.join(ATTACH_CONTENT_DIR, link))
@@ -76,14 +77,32 @@ class AutoAttachExtension(Extension):
 def pelican_init(pelican_obj):
     pelican_obj.settings['MARKDOWN'].setdefault('extensions', []).append(AutoAttachExtension())
 
-def pelican_content_dir_get(content):
-    global ATTACH_CONTENT_DIR, ATTACH_PATH, ATTACH_STATIC_PATHS
-    ATTACH_PATH = path.normpath(content.settings.get("PATH", ""))
-    paths = content.settings.get("STATIC_PATHS", [])
+def content_path_get(gene, c_paths, c_exclude):
+    global ATTACH_PATH, ATTACH_STATIC_PATHS, ATTACH_CONTENT_DIR, ATTACH_CONTENTS
+
+    ATTACH_PATH = path.normpath(gene.settings.get("PATH", ""))
+    paths = gene.settings.get("STATIC_PATHS", [])
     ATTACH_STATIC_PATHS = [ path.normpath(path.join(ATTACH_PATH, x)) for x in paths ]
-    ATTACH_CONTENT_DIR = path.dirname(content.source_path)
+
+    if len(ATTACH_CONTENTS) == 0:
+        # I don't know how to get markdown filename without this.
+        for f in gene.get_files(gene.settings[c_paths], exclude=gene.settings[c_exclude]):
+            if gene.get_cached_data(f, None): continue
+            ATTACH_CONTENTS.append(f)
+        ATTACH_CONTENTS.reverse()
+
+    f = ATTACH_CONTENTS.pop()
+    logging.debug("Guess next content: " + f)
+    ATTACH_CONTENT_DIR = path.dirname(path.normpath(path.join(gene.path, f)))
+
+def article_path_get(gene):
+    return content_path_get(gene, "ARTICLE_PATHS", "ARTICLE_EXCLUDES")
+
+def page_path_get(gene):
+    return content_path_get(gene, "PAGE_PATHS", "PAGE_EXCLUDES")
 
 def register():
     """Plugin registration"""
     signals.initialized.connect(pelican_init)
-    signals.content_object_init.connect(pelican_content_dir_get)
+    signals.article_generator_preread.connect(article_path_get)
+    signals.page_generator_preread.connect(page_path_get)
