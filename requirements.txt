@@ -15,8 +15,10 @@ mdurl==0.1.2
 ordered-set==4.1.0
 pelican==4.9.1
 Pygments==2.18.0
+pymdown-extensions==10.8.1
 python-dateutil==2.9.0.post0
 pytz==2024.1
+PyYAML==6.0.1
 rich==13.7.1
 six==1.16.0
 smmap==5.0.1

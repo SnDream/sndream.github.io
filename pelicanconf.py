@@ -27,10 +27,29 @@ PLUGINS = [
     "filetime_from_git",
     "i18n_subsites",
     "auto_attach",
-    "pelican_md_checklist",
     "representative_image",
 ]
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+
+# Markdown
+MARKDOWN = {
+    'extensions': [
+        'pymdownx.tilde',
+        'pymdownx.tasklist',
+    ],
+    'extension_configs': {
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight',
+            'guess_lang': False,
+        },
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        "pymdownx.tilde": {
+            "subscript": False,
+        },
+    },
+    'output_format': 'html5',
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
