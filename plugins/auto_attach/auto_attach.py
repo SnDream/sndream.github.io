@@ -18,11 +18,11 @@ ATTACH_LINK_RE = r'\[(?=[^\]]*?\]\(\.\.?/)'
 
 ATTACH_STATIC_PATHS = []
 ATTACH_PATH = ""
-ATTACH_CONTENT_DIR = ""
+ATTACH_CONTENT_PATH = ""
 ATTACH_CONTENTS = []
 
 def link_type(link):
-    link = path.normpath(path.join(ATTACH_CONTENT_DIR, link))
+    link = path.normpath(path.join(path.dirname(ATTACH_CONTENT_PATH), link))
     if not path.exists(link):
         logging.warn(link + " is not exist")
 
@@ -78,7 +78,7 @@ def pelican_init(pelican_obj):
     pelican_obj.settings['MARKDOWN'].setdefault('extensions', []).append(AutoAttachExtension())
 
 def content_path_get(gene, c_paths, c_exclude):
-    global ATTACH_PATH, ATTACH_STATIC_PATHS, ATTACH_CONTENT_DIR, ATTACH_CONTENTS
+    global ATTACH_PATH, ATTACH_STATIC_PATHS, ATTACH_CONTENT_PATH, ATTACH_CONTENTS
 
     ATTACH_PATH = path.normpath(gene.settings.get("PATH", ""))
     paths = gene.settings.get("STATIC_PATHS", [])
@@ -93,7 +93,30 @@ def content_path_get(gene, c_paths, c_exclude):
 
     f = ATTACH_CONTENTS.pop()
     logging.debug("Guess next content: " + f)
-    ATTACH_CONTENT_DIR = path.dirname(path.normpath(path.join(gene.path, f)))
+    ATTACH_CONTENT_PATH = path.normpath(path.join(gene.path, f))
+
+def page_path_final(content):
+    # Since content_path_get uses an informal way of fetching files,
+    # its method may be invalid due to a Pelican version update, 
+    # so check when you can get the filename.
+    global ATTACH_CONTENT_PATH, ATTACH_GUESS_FAIL_FIRSTTIME
+
+    real_attach_ext = path.splitext(content.source_path)[1].lower()
+    content_path_actual = content.source_path
+    content_path_guessed = ATTACH_CONTENT_PATH
+    ATTACH_CONTENT_PATH = ""
+
+    if real_attach_ext not in (".md", ".markdown", ".mkd", ".mdown"):
+        return
+
+    if content_path_guessed != content_path_actual:
+        logging.fatal(
+            "Dir to the guessed: %s\n"%content_path_guessed +
+            "Dir to the actual: %s\n"%content_path_actual +
+            "Failed to guess Markdown file path.\n" +
+            "Failure may be due to a Python or Pelican version change.\n" +
+            "Please disable the auto_attach plugin or look for plugin updates. ")
+        raise UserWarning("Failed to guess Markdown file path")
 
 def article_path_get(gene):
     return content_path_get(gene, "ARTICLE_PATHS", "ARTICLE_EXCLUDES")
@@ -106,3 +129,4 @@ def register():
     signals.initialized.connect(pelican_init)
     signals.article_generator_preread.connect(article_path_get)
     signals.page_generator_preread.connect(page_path_get)
+    signals.content_object_init.connect(page_path_final)
