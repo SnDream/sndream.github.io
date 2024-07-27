@@ -4,6 +4,11 @@ from pelican import signals
 from pelican.contents import Article, Page
 from pelican.generators import ArticlesGenerator, PagesGenerator
 
+# A fix that is not appropriate for all situations.
+CUSTOM_FIX = True
+
+if CUSTOM_FIX:
+    from os import path
 
 def images_extraction(instance):
     """Extract images from content."""
@@ -11,6 +16,9 @@ def images_extraction(instance):
     if type(instance) in (Article, Page):
         if "image" in instance.metadata:
             featured_image = instance.metadata["image"]
+            if CUSTOM_FIX and featured_image[:1] == '.':
+                tmp_path = path.join(path.dirname(instance.source_path), featured_image)
+                featured_image = path.relpath(tmp_path, instance.settings['PATH'])
 
         # Process Summary:
         # If summary contains images, extract one to be the featured_image
@@ -28,7 +36,10 @@ def images_extraction(instance):
 
         # If there are no image in summary, look for it in the content body
         if not featured_image:
-            soup = BeautifulSoup(instance._content, "html.parser")
+            if CUSTOM_FIX:
+                soup = BeautifulSoup(instance.content, "html.parser")
+            else:
+                soup = BeautifulSoup(instance._content, "html.parser")
             imageTag = soup.find("img")
             if imageTag:
                 featured_image = imageTag["src"]
