@@ -65,7 +65,7 @@ Summary: 站点的自述文件
 
 编译过程使用 `requirements.txt` 作为 `Python` 库的要求。
 
-Github 仓库中的 `Settings > Pages > Build and deployment > source` 中，配置为 `Github Actions` 。
+Github 仓库中的 `Settings` > `Pages` > `Build and deployment` > `source` 中，配置为 `Github Actions` 。
 
 > 最佳实践：在[官方的仓库中](https://github.com/getpelican/pelican/blob/main/.github/workflows/github_pages.yml)有社区维护的工作流，或许直接使用这个工作流更好。
 
@@ -121,7 +121,12 @@ Github 仓库中的 `Settings > Pages > Build and deployment > source` 中，配
 
 在文章列表中使用特定的图像作为文章头图。
 
-目前插件还有故障，无法正确索引到图像的相对路径。必须手动制定元数据的 `Image` 参数才能正常工作。
+~~目前插件还有故障，无法正确索引到图像的相对路径。必须手动制定元数据的 `Image` 参数才能正常工作。~~
+
+目前使用仓库特定的方法索引图像路径。
+
+- 对于使用 `Image` 元数据的，只能识别出放在 `CONTENT` 内的 `STATIC` 路径（不需要额外附加 `{static}` 标注）。
+- 对于索引文章中图像的，直接用和文章中一致的路径。
 
 ### ~~复选框支持 - pelican_md_checklist~~
 
@@ -244,7 +249,8 @@ Image: 头图路径
         - [ ] ~~修订提交到上游（？）~~
     - [x] featured_image
         - [x] 使用最新版
-        - [ ] 修订相对路径问题，或许使用仓库特定的方案
+        - [x] 使用仓库特定的方案修订相对路径问题
+        - [ ] 通用的方法来修订相对路径问题
     - [ ] Markdown 相关插件
         - [x] 修订 Markdown 中代码块的奇怪渲染
         - [ ] 检查某些功能是否需要额外开启
