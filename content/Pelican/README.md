@@ -29,7 +29,7 @@ Summary: 站点的自述文件
 │   |__ filetime_from_git       -> 根据 Git 提交时间自动分配时间
 │   |__ i18n_subsites           -> 多语言
 │   |__ pelican_md_checklist    -> Markdown 复选框支持 (已废弃)
-│   \__ representative_image    -> 头图
+│   \__ featured_image      -> 头图
 |__ themes                  -> 主题
 |   \__ Flex                    -> Flex 主题
 |__ README.md               -> 自述文件
@@ -115,15 +115,13 @@ Github 仓库中的 `Settings > Pages > Build and deployment > source` 中，配
 
 - 解决多语言页面报 `KeyError` 的错误。
 
-### 头图 - representative_image
+### 头图 - featured_image
 
-目前直接从[官方仓库](https://github.com/getpelican/pelican-plugins/tree/master/representative_image)复制，还没有任何修订。
+目前直接从[官方仓库](https://github.com/pelican-plugins/featured-image)复制，还没有任何修订。
 
 在文章列表中使用特定的图像作为文章头图。
 
 目前插件还有故障，无法正确索引到图像的相对路径。必须手动制定元数据的 `Image` 参数才能正常工作。
-
-> 最佳实践：官方插件目前最新版本已经[独立仓库](https://github.com/pelican-plugins/featured-image)维护，应该切换到该仓库。虽然那个仓库也没有修复上述的故障。
 
 ### ~~复选框支持 - pelican_md_checklist~~
 
@@ -244,8 +242,8 @@ Image: 头图路径
         - [ ] 修订提交到上游
     - [ ] ~~pelican_md_checklist~~ 不再需要此插件
         - [ ] ~~修订提交到上游（？）~~
-    - [x] representative_image
-        - [ ] 使用最新版
+    - [x] featured_image
+        - [x] 使用最新版
         - [ ] 修订相对路径问题，或许使用仓库特定的方案
     - [ ] Markdown 相关插件
         - [x] 修订 Markdown 中代码块的奇怪渲染
