@@ -27,7 +27,7 @@ PLUGINS = [
     "filetime_from_git",
     "i18n_subsites",
     "auto_attach",
-    "representative_image",
+    "featured_image",
 ]
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
