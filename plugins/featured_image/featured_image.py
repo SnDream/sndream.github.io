@@ -18,7 +18,7 @@ def images_extraction(instance):
             featured_image = instance.metadata["image"]
             if CUSTOM_FIX and featured_image[:1] == '.':
                 tmp_path = path.join(path.dirname(instance.source_path), featured_image)
-                featured_image = path.relpath(tmp_path, instance.settings['PATH'])
+                featured_image = path.join('/', path.relpath(tmp_path, instance.settings['PATH']))
 
         # Process Summary:
         # If summary contains images, extract one to be the featured_image
