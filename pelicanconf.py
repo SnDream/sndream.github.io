@@ -91,7 +91,7 @@ MAIN_MENU = True
 
 from datetime import datetime
 COPYRIGHT_YEAR = datetime.now().year
-COPYRIGHT_NAME = "SnDream"
+COPYRIGHT_NAME = "SnDream. In memory of …… ."
 
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
