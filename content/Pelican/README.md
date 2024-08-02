@@ -30,7 +30,7 @@ Summary: 站点的自述文件
 │   |__ i18n_subsites           -> 多语言
 │   |__ pelican_md_checklist    -> Markdown 复选框支持 (已废弃)
 │   |__ plain_text_summary      -> 纯文本概要
-│   \__ featured_image      -> 头图
+│   \__ featured_image      -> 特色图像
 |__ themes                  -> 主题
 |   \__ Flex                    -> Flex 主题
 |__ README.md               -> 自述文件
@@ -116,11 +116,11 @@ Github 仓库中的 `Settings` > `Pages` > `Build and deployment` > `source` 中
 
 - 解决多语言页面报 `KeyError` 的错误。
 
-### 头图 - featured_image
+### 特色图像 - featured_image
 
 目前直接从[官方仓库](https://github.com/pelican-plugins/featured-image)复制，还没有任何修订。
 
-在文章列表中使用特定的图像作为文章头图。
+在文章列表中使用特定的图像作为文章特色图像。
 
 ~~目前插件还有故障，无法正确索引到图像的相对路径。必须手动制定元数据的 `Image` 参数才能正常工作。~~
 
@@ -226,7 +226,7 @@ Tags: 标签1, 标签2
 Slug: title-slug
 Lang: en
 Summary: 摘要
-Image: 头图路径
+Image: 特色图像路径
 ```
 
 只有 `Title` 是必选项，理论上 Pelican 可以配置为 `Title` 也可选，不过我还是留着。其他的看情况配置。
