@@ -29,6 +29,7 @@ Summary: 站点的自述文件
 │   |__ filetime_from_git       -> 根据 Git 提交时间自动分配时间
 │   |__ i18n_subsites           -> 多语言
 │   |__ pelican_md_checklist    -> Markdown 复选框支持 (已废弃)
+│   |__ plain_text_summary      -> 纯文本概要
 │   \__ featured_image      -> 头图
 |__ themes                  -> 主题
 |   \__ Flex                    -> Flex 主题
@@ -146,6 +147,14 @@ Github 仓库中的 `Settings` > `Pages` > `Build and deployment` > `source` 中
 
 另外，将文本高亮中的代码猜测关闭，这个猜测对中文太不友好了。
 
+### 纯文本概要 - plain_text_summary
+
+自己参考和概要相关的插件，自己写了一个对应的插件。
+
+插件的功能，直接删除所有文本格式和图像，只保留文本。
+
+我也不知道 `Pelican` 到底哪里又出毛病了，实现这个比我想象中还麻烦，只能说目前插件能跑。
+
 ## 主题
 
 使用 `Flex` 主题，配置简体中文环境。
@@ -251,6 +260,9 @@ Image: 头图路径
         - [x] 使用最新版
         - [x] 使用仓库特定的方案修订相对路径问题
         - [ ] 通用的方法来修订相对路径问题
+    - [x] plain_text_summary
+        - [x] 自动生成的概要，移除文本格式
+        - [ ] 提交到上游（？ 感觉代码质量不高）
     - [ ] Markdown 相关插件
         - [x] 修订 Markdown 中代码块的奇怪渲染
         - [ ] 检查某些功能是否需要额外开启
@@ -262,8 +274,7 @@ Image: 头图路径
     - [ ] 关闭边栏强制使用小写
     - [ ] 语言标签用“中文/English”，并且强制顺序
     - [ ] 设置一个主页，而不是文章列表
-    - [ ] 自动生成的概要，移除文本格式
-        - [ ] 可能参考 Clean Summary 插件？
+
 - [ ] 内容
     - [ ] 编写 GameBoy 编程的内容
     - [ ] 编写 GameBoy 汉化的内容

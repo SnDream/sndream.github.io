@@ -28,6 +28,7 @@ PLUGINS = [
     "i18n_subsites",
     "auto_attach",
     "featured_image",
+    "plain_text_summary",
 ]
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
