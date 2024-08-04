@@ -21,6 +21,10 @@ ARTICLE_SAVE_AS = '{category}/{slug}.html'
 ARTICLE_LANG_URL = '{category}/{slug}-{lang}.html'
 ARTICLE_LANG_SAVE_AS = '{category}/{slug}-{lang}.html'
 
+FILENAME_METADATA = '(?P<title>.*)'
+
+# SLUGIFY_USE_UNICODE = True
+
 # Plugins
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
