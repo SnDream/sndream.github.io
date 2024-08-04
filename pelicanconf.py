@@ -68,6 +68,7 @@ AUTHOR_FEED_RSS = None
 LINKS = (
     ("网盘", "http://sndream.ysepan.com/"),
     ("PanDocs中文版", "https://sndream.github.io/PanDocs/"),
+    ("English", "/pages/english-pages-en.html"),
 )
 
 # Social widget
