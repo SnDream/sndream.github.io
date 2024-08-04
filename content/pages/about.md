@@ -1,7 +1,5 @@
-Title: 关于/About
+Title: 关于
 Slug: about
-
-> Please click `en` in the upper right corner to switch to the English version.
 
 # 星夜之幻 (SnDream)
 

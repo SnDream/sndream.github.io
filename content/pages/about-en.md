@@ -1,10 +1,8 @@
-Title: 关于/About
+Title: About
 Slug: about
 Lang: en
 
-> 请点击右上角的 `zh_cn` 切换到中文版本。
-
-# SnDream (星夜之幻)
+# 星夜之幻 (SnDream)
 
 I'm SnDream, and I've done some research related to GameBoy's programming.
 

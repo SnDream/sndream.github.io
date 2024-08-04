@@ -1,6 +1,7 @@
-Title: English
+Title: English Pages
 Slug: english-pages
 Lang: en
+Status: hidden
 
 This page is used to list the pages in the site that are available in English.
 
@@ -8,6 +9,8 @@ I can't create a separate English version of the site due to a glitch in i18n_su
 
 Also I found that English pages are hard to index by default. So I created this page on purpose.
 
+- Pages
+    - [About](./about-en.md)
 - OpenDingux
     - [OpenDingux Emulators](../OpenDingux/OpenDinguxEmus.md)
 - GameBoy
