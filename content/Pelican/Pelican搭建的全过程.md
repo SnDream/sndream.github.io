@@ -1,7 +1,9 @@
+---
 Title: Pelican搭建的全过程
 Tags: Pelican, 过程记录
 Slug: pelican-build-process-all
 Summary: Pelican的生态比想象中更差一些。
+---
 
 # 前言
 

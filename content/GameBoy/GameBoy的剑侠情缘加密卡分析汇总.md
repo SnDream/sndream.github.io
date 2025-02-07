@@ -1,7 +1,9 @@
+---
 Title: GameBoy的剑侠情缘加密卡分析汇总
 Tags: GameBoy, 加密
 Slug: gameboy-jianxia-analyze
 Summary: 剑侠情缘的加密和外星7000基本没有区别，只是需要额外做内存初始化。
+---
 
 ![运行效果图](../images/GameBoy/jianxia/jianxia.png)
 

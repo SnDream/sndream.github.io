@@ -1,7 +1,9 @@
+---
 Title: GameBoy的百变小樱加密卡分析汇总
 Tags: GameBoy, 加密
 Slug: gameboy-sakura-analyze
 Image: ../images/GameBoy/sakura/sakura1.png
+---
 
 分析D商汉化卡《百变小樱》的加密。
 

@@ -1,7 +1,9 @@
+---
 Title: GameBoy的最终幻想加密卡分析汇总
 Tags: GameBoy, 加密
 Slug: gameboy-zuizhong-analyze
 Summary: 靠猜测完成的补丁。
+---
 
 ![运行效果图](../images/GameBoy/zuizhong/zuizhong.png)
 

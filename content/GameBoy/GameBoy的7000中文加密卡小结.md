@@ -1,7 +1,9 @@
+---
 Title: GameBoy的7000中文加密卡小结
 Tags: GameBoy, 知乎
 Slug: zhihu-gameboy-7000-cncard
 Image: ../images/GameBoy/zhihu-gameboy-7000-cncard-title.png
+---
 
 从朋友那里弄到了几个GameBoy的加密卡ROM，研究了几天，因为这些加密卡ROM的共性是往7000-700F端口写入相关加密代码，暂且称其为7000中文加密卡。
 因为卡带头数据诡异地来自于牧场物语GB2，所以如果你开心的话，叫他牧场2变异卡什么的也是可以的。

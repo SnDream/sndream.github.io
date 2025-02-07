@@ -1,8 +1,10 @@
+---
 Title: OpenDingux Emulators
 Tags: OpenDingux, Emulator
 Slug: odemus
 Lang: en
 Summary: OpenDingux Emulators
+---
 
 Due to the closure of the `dingoonity` forums,
 the list of emulators I previously listed on the relevant page no longer exists.

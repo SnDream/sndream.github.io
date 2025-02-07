@@ -1,8 +1,10 @@
+---
 Title: GameBoy的7000中文加密卡总结
 Tags: GameBoy
 Slug: zhihu-gameboy-7000-cncard-final
 Image: ../images/GameBoy/zhihu-gameboy-7000-cncard-title.png
 Summary: 力大砖飞。
+---
 
 相比于猜测，还是直接有卡好处理。我是没有卡的，所以只能靠猜，如果手上真的有卡会好弄一些。
 

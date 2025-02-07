@@ -1,7 +1,9 @@
+---
 Title: OpenDingux模拟器
 Tags: OpenDingux, Emulator
 Slug: odemus
 Summary: OpenDingux模拟器列表
+---
 
 由于 `dingoonity` 关闭，我之前在相关页面上列出的模拟器列表已不存在。
 在这里，我将列出一些我修订维护的 `Opendingux` 模拟器列表。

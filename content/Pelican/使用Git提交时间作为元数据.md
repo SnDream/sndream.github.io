@@ -1,5 +1,7 @@
+---
 Title: 使用Git提交时间作为元数据
 Slug: git-commmit-as-metadata
+---
 
 目前已经正常了。
 

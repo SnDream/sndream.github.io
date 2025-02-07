@@ -1,8 +1,10 @@
+---
 Title: GameBoy Programming
 Tags: Gameboy, GB编程, 汉化
 Slug: gbprog
 Lang: en
 Summary: GameBoy Programming
+---
 
 The content is available in Chinese only.
 
