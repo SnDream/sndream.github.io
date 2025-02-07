@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ -f venv/bin/activate ] || {
+	[ ! -d venv ] || rm -rf venv
+	virtualenv venv
+}
+
+source ./venv/bin/activate

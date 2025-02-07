@@ -165,20 +165,41 @@ Github 仓库中的 `Settings` > `Pages` > `Build and deployment` > `source` 中
 
 ## 本地编译
 
-本地使用 `Python3.10.12` 编译。先安装 `virtualenv`。
+首先，由于站点配置了双语，需要手动开启两种locale。
+
+对于 `Ubuntu` 来说，执行
+
+```
+sudo sudo dpkg-reconfigure locales
+```
+
+打开 `en_US.UTF-8` 和 `zh_CN.UTF-8` 的配置，并默认选择 `zh_CN.UTF8` ，避免编译失败。
+
+之后，在本地使用 `Python3.10.12` 编译。先安装 `virtualenv`。
+
+```
+sudo apt install virutalenv
+```
+
+对于比较老版本的 `Ubuntu` ，还可以用 `pip` 直接安装。
 
 ```
 pip install virtualenv
 ```
 
-然后找一个仓库外的路径，创建虚拟环境。以当前路径为仓库根目录为例，创建到根目录上级的`pelican-venv`中。并引用改环境
+然后找一个仓库外的路径，创建虚拟环境。以当前路径为仓库根目录为例，创建到根目录当前的`venv`中。并引用该环境
 
 ```
-virtualenv ../pelican-venv
-source ../pelican-venv/bin/activate
+virtualenv ./venv
+source ./venv/bin/activate
 ```
 
-执行后，当前的 `shell` 最前面会多一个 `(pelican-venv)` 提示，代表进入对应的虚拟环境。
+或者直接使用统一命令进行
+```
+source env-setup
+```
+
+执行后，当前的 `shell` 最前面会多一个 `(venv)` 提示，代表进入对应的虚拟环境。
 
 安装所有的依赖。
 
@@ -194,7 +215,7 @@ pip freeze > requirements.txt
 
 将依赖记录下来，供自动构建使用。
 
-以后就不需要重复上述的操作，直接执行 `source ../pelican-venv/bin/activate` 即可。
+以后就不需要重复上述的操作，直接执行 `source env-setup` 即可（手动执行的话，是 `source ./venv/bin/activate` ）。
 
 直接执行 `pelican -d` 编译。编译结果在 `output` 目录中。
 
