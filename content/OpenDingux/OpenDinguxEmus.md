@@ -29,7 +29,7 @@ Note that, depending on the emulator implementation,
 [^regba]: [ReGBA- releases](https://github.com/SnDream/ReGBA-/releases) .
 [^gamba]: [Gambatte-DMS releases](https://github.com/SnDream/gambatte-dms/releases) .
 [^gnubo]: [GnuBoy releases](https://github.com/SnDream/gnuboy_rs90/releases) .
-[^oswan]: [OSwan+ releases](https://github.com/SnDream/pokemini/releases) .
+[^oswan]: [OSwan+ releases](https://github.com/SnDream/oswan/releases) .
 [^smssd]: [SMS-sdl releases](https://github.com/SnDream/sms_sdl_ggonly/releases) .
 [^pokem]: [PokeMini releases](https://github.com/SnDream/pokemini/releases) .
 [^picod]: [PicoDrive releases](https://github.com/SnDream/picodrive/releases) .

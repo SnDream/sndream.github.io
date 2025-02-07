@@ -26,7 +26,7 @@ Summary: OpenDingux模拟器列表
 [^regba]: [ReGBA- 发行页面](https://github.com/SnDream/ReGBA-/releases) .
 [^gamba]: [Gambatte-DMS 发行页面](https://github.com/SnDream/gambatte-dms/releases) .
 [^gnubo]: [GnuBoy 发行页面](https://github.com/SnDream/gnuboy_rs90/releases) .
-[^oswan]: [OSwan+ 发行页面](https://github.com/SnDream/pokemini/releases) .
+[^oswan]: [OSwan+ 发行页面](https://github.com/SnDream/oswan/releases) .
 [^smssd]: [SMS-sdl 发行页面](https://github.com/SnDream/sms_sdl_ggonly/releases) .
 [^pokem]: [PokeMini 发行页面](https://github.com/SnDream/pokemini/releases) .
 [^picod]: [PicoDrive 发行页面](https://github.com/SnDream/picodrive/releases) .
