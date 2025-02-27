@@ -25,6 +25,7 @@ Slug: gpd-pocket-4-user-configs
 ## 防尘塞
 
 - 大部分接口实际上目前都没用到，用防尘塞塞住
+- 找不到平齐的TYPE-C 防尘塞
 
 ## KVM扩展
 
@@ -32,6 +33,12 @@ Slug: gpd-pocket-4-user-configs
 - 实际上就是一个HDMI IN + 内置键鼠外部控制
 - HDMI IN 是 MS2130 ，可以直接买便宜平替
 - 键鼠控制插线就断链内置，我觉得这个应该搞个按键的
+
+## 电容笔
+
+- ~~1块钱买了一支圆盘式的电容笔~~
+    - 体验版，9天就坏了
+- 20另购一支，质感更好，不知道能用多久
 
 # 软硬件配置部分
 
@@ -70,7 +77,17 @@ Slug: gpd-pocket-4-user-configs
 
 ## BIOS
 
-- 开启直流供电，设置到70%
+- 开启直流供电，设置到~~70%~~ 更新后支持60%
+- 打开安全启动
+
+### BIOS升级
+
+- 用exe刷写BIOS版本
+    - 刷写后所有BIOS配置丢失，需要重新配置
+    - BitLock被加锁，需要手动解锁（可能是因为安全启动没开就进入）
+    - PIN失效，需要重新设置
+- 用U盘刷EC
+- 在安全中心中打开固件保护
 
 ## 鼠标指针
 
@@ -155,8 +172,12 @@ Slug: gpd-pocket-4-user-configs
 # 软件安装
 
 ## 微软商店安装
-- WPS
+- ~~WPS~~
     - 英文版，够用了
+    - 这个电脑卸载了，先换Ofiice Mobile
+- Office Mobile
+    - 屏幕只有8.8寸，可以免费用
+    - 用点基础功能而已
 - 网易云音乐
     - 以前UWP更简单点，但是不好装了
 - ~~BandiZip~~
@@ -203,6 +224,10 @@ Slug: gpd-pocket-4-user-configs
 - LM Studio
     - 跑点本地模型用，目前感觉挺好用的
     - `AMD HX370` 的 NPU 目前像一个笑话，跑大模型根本没用上
+- 水果忍者
+    - 想从商店买都没得买
+    - 安装证书后安装appx
+    - 导入2亿次试玩存档
 
 # PWA
 - Discord
@@ -215,3 +240,5 @@ Slug: gpd-pocket-4-user-configs
 ## 卸载
 - WPTx64
     - 目前没看到有啥用，还要影响 `PATH`
+- GPDKeyboardAssistantTool
+    - 改用 Windows 的切换键功能，听个声音就够了
