@@ -129,6 +129,10 @@ Slug: gpd-pocket-4-user-configs
 
 - 启用沙盒，某些东西放沙盒里临时跑一跑就够了
 
+## 关闭 Windows Search 服务
+
+暂时关闭这个服务看看内存占用情况，顺便看下功能有没有影响。或许以后会重新打开，但是记录一下。
+
 # 故障规避
 
 ## 休眠唤醒不了屏幕
@@ -143,6 +147,7 @@ Slug: gpd-pocket-4-user-configs
 - 和 I2C 有关系，或许也是供电问题
 - 等下次出现再看看怎么弄
 - 理论上可以写一个脚本检测并重新激活，目前先不折腾
+  - 有人实现了 [修复脚本](https://github.com/W-MS/GPDPocket4TouchFix) ，但是我还没用起来。
 
 ## 破音
 
@@ -178,14 +183,18 @@ Slug: gpd-pocket-4-user-configs
 - Office Mobile
     - 屏幕只有8.8寸，可以免费用
     - 用点基础功能而已
+    - 强制自动保存，还挺挫的，什么时候受不了换回 WPS
 - 网易云音乐
     - 以前UWP更简单点，但是不好装了
-- ~~BandiZip~~
+- BandiZip
     - ~~关闭主页，这样就没有广告~~
     - ~~基本的关联配置一下~~
-    - 最新版打开右下角就弹广告，已卸载
-- NanaZip
+    - 最新版打开右下角就弹广告，~~已卸载~~
+      - 用了一个[土方法](https://github.com/SnDream/BandizipMSE-HideAD) （[站内链接](./隐藏BandizipMSE版本的广告.md)）暂时隐藏广告，能用几天算几天
+- ~~NanaZip~~
     - UI目前还差点，不过底子就是7zfm，够用
+    - 先土办法用 Bandzip 再撑几天，不行了再用 Nanazip
+    - Nanazip 的高分辨率感觉还是比较差一点
 - 百度网盘
     - UWP版
     - 偶尔龟速下几个文件就够了
@@ -227,7 +236,9 @@ Slug: gpd-pocket-4-user-configs
 - 水果忍者
     - 想从商店买都没得买
     - 安装证书后安装appx
-    - 导入2亿次试玩存档
+    - ~~导入2亿次试玩存档~~
+      - 用工具自己修改存档
+      - 后面打算写一个工具来补完试玩版不能使用的商店/成就系统
 
 # PWA
 - Discord
