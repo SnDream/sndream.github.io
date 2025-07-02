@@ -105,9 +105,12 @@ THEME_COLOR_ENABLE_USER_OVERRIDE = True
 
 GITHUB_CORNER_URL = "https://github.com/SnDream"
 
+SITETITLE = "GBZ80编程"
+SITESUBTITLE = "不为人知的网络边缘"
 SITELOGO = '/assets/sitelogo.png'
 FAVICON = '/assets/favicon.ico'
 
+USE_GOOGLE_FONTS = False
 USE_LESS = False
 
 OG_LOCALE = "zh_CN"
