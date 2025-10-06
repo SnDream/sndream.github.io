@@ -179,9 +179,10 @@ Slug: gpd-pocket-4-user-configs
     - 最后看着没什么用，恢复了
 - Choose ANGLE graphics backend
     - ~~目前配置是 `OpenGL` 功耗和兼容可能要评估一下~~ 又不用了
-    - ~~`D3D9`~~ 软解视频
+    - ~~`D3D9`~~ 软解视频，且不支持 `WebGL2`
     - `D3D11` ~~微博跳黑屏~~ 目前不跳黑屏了，用这个配置
-    - ~~`D3D12on11`~~ B站视频前黑屏
+    - ~~`D3D12on11`~~ B站视频前黑屏，最新版本好像没有这个配置了
+    - `D3D11 Wrap` 还没用过，可能是前一个的改名
 
 # 软件安装
 
@@ -189,11 +190,15 @@ Slug: gpd-pocket-4-user-configs
 - ~~WPS~~
     - 英文版，够用了
     - 这个电脑卸载了，先换Ofiice Mobile
-- Office Mobile
+- ~~Office Mobile~~
     - 屏幕只有8.8寸，可以免费用
     - 用点基础功能而已
     - 强制自动保存，还挺挫的，什么时候受不了换回 WPS
     - 有时候会丢失保存权限
+    - 已卸载，换标准版
+- Office 2019
+    - 先用着，没有什么特别的
+    - 删除 `OfficePLUS`
 - 网易云音乐
     - 以前UWP更简单点，但是不好装了
 - BandiZip
@@ -231,6 +236,7 @@ Slug: gpd-pocket-4-user-configs
 
 - VS Code
     - 配置安装路径不带空格，这样避免 `WSL` 下 `PATH` 某些奇怪的问题
+    - 下载 `wslgit` ，用于windows下临时使用git
 - 微信4.0
     - 不是很想装，不得不装一个，就装了新版看看
 - ImFile
