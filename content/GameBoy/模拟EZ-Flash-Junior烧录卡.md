@@ -1,5 +1,5 @@
 ---
-Title: 模拟 EZ-FLASH Juniorr烧录卡
+Title: 模拟 EZ-FLASH Junior 烧录卡
 Tags: Gameboy, GB编程, 汉化
 Slug: emulate-ezflashjr
 Summary: GB编程
